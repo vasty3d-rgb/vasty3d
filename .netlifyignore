@@ -1,0 +1,18 @@
+# Всё, что не нужно опубликованному сайту — сюда, а не в /assets.
+# Netlify грузит ВСЮ папку --dir целиком, .gitignore на это не влияет,
+# поэтому раздутые исходники (порфтолио/ ~2.8 ГБ) нужно исключать отдельно.
+
+порфтолио/
+превью/
+backups/
+.git/
+.claude/
+node_modules/
+
+devserver.py
+preview.cjs
+render.yaml
+README.md
+egg-seedance-prompt.md
+.netlify-token
+.gitignore
