@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — страница не найдена · VASTY</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#08080A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090909'/%3E%3Cpath d='M14 18h9l9 22 9-22h9L37 50h-9z' fill='%23B600A8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080A;--ink:#EDEFF2;--muted:#8B909B;--line:rgba(237,239,242,.12);
+  --acc-1:#B600A8;--acc-2:#7621B0;
+  --grad:linear-gradient(123deg,#18011F 0%,#B600A8 34%,#7621B0 68%,#BE4C00 100%);
+  --grad-text:linear-gradient(180deg,#FFFFFF 0%,#9AA3AF 100%);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+body{min-height:100svh;display:flex;flex-direction:column;font-family:'Inter',system-ui,-apple-system,sans-serif;font-weight:300;
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--acc-1);color:#fff}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E")}
+header{padding:clamp(20px,3vw,34px) clamp(20px,4vw,68px)}
+.logo{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(17px,1.6vw,22px);letter-spacing:.02em}
+.logo span{color:var(--acc-1)}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:20px clamp(20px,4vw,68px) 0;position:relative}
+.glow{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);width:min(900px,120vw);aspect-ratio:1;
+  background:radial-gradient(circle,rgba(182,0,168,.24),rgba(118,33,176,.1) 42%,transparent 68%);filter:blur(40px);z-index:0}
+.stage{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0;max-width:640px}
+.num-row{position:relative;display:flex;align-items:center;justify-content:center;gap:clamp(4px,1.4vw,18px);width:100%}
+.num{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(5.5rem,20vw,11rem);line-height:.85;letter-spacing:-.04em;
+  background:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.char{width:clamp(150px,26vw,320px);flex:none;margin-inline:clamp(-6px,-1vw,-2px);filter:drop-shadow(0 30px 50px rgba(0,0,0,.6));
+  animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -10px}}
+h1{font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(1.3rem,2.4vw,1.9rem);text-transform:uppercase;
+  letter-spacing:-.02em;margin:clamp(18px,2.6vw,28px) 0 0}
+p{margin:14px 0 0;max-width:52ch;color:#C2C6CE;font-size:clamp(14px,1.1vw,16px)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:clamp(26px,3vw,38px)}
+.btn{display:inline-flex;align-items:center;gap:.7em;padding:1.05em 2.1em;border-radius:999px;font-family:'Unbounded',sans-serif;
+  font-size:clamp(11px,1vw,13px);font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s,background .35s}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:var(--grad);color:#fff;
+  box-shadow:0 4px 4px rgba(181,1,167,.25), 4px 4px 14px #7721B1 inset, 0 0 0 1px rgba(255,255,255,.22)}
+.btn-primary:hover{box-shadow:0 10px 40px rgba(181,1,167,.45), 4px 4px 14px #7721B1 inset, 0 0 0 1px rgba(255,255,255,.4)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:rgba(237,239,242,.42);background:rgba(255,255,255,.04)}
+footer{padding:clamp(20px,3vw,34px) clamp(20px,4vw,68px);text-align:center;font-size:12px;color:var(--muted)}
+@media(max-width:640px){
+  .num{font-size:clamp(3.6rem,17vw,6rem)}
+  .char{width:clamp(110px,32vw,180px)}
+}
+@media(prefers-reduced-motion:reduce){.char{animation:none}}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<header><a href="index.html" class="logo">VASTY<span>.</span></a></header>
+<main>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="stage">
+    <div class="num-row">
+      <span class="num">4</span>
+      <img class="char" src="assets/character/shocked.webp" alt="Персонаж VASTY в шоке от того, что страница не найдена">
+      <span class="num">4</span>
+    </div>
+    <h1>Такой страницы нет</h1>
+    <p>Ссылка устарела или в адресе опечатка. Сам в шоке — но с сайтом всё в порядке, просто эта страница не существует.</p>
+    <div class="actions">
+      <a href="index.html" class="btn btn-primary">На главную</a>
+      <a href="index.html#contact" class="btn btn-ghost">Написать в Telegram</a>
+    </div>
+  </div>
+</main>
+<footer>© <span id="yr"></span> VASTY — Иван Лебедев · CGI / VFX artist</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
