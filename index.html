@@ -921,6 +921,85 @@ footer a:hover{color:var(--ink)}
 .clb-media.is-image .vp-big,.clb-media.is-image .vp-bar{display:none}
 .clb.no-video .vp-big,.clb.no-video .vp-bar{display:none}
 
+/* ============ MOBILE: читаемость текста/иконок и мелкие баги вёрстки ============ */
+/* ссылки соцсетей в мобильном меню подхватывали стиль больших пунктов (#mob a) —
+   были огромными заголовками с рамкой снизу вместо маленькой строки */
+#mob .soc a{font-family:inherit;font-weight:500;font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+  padding-block:10px;border-bottom:0;color:var(--muted)}
+/* стрелки «следующий клиент/работа» по центру экрана ложились поверх текста
+   кейса и краёв вертикального видео — на телефоне уводим их наверх, к крестику */
+@media(max-width:900px){
+  .clb-conav,#lb .clb-conav{top:clamp(14px,2vw,28px);translate:none;width:48px;height:48px}
+  .clb-coprev{left:clamp(14px,2vw,28px)}
+  .clb-conext{left:calc(clamp(14px,2vw,28px) + 58px);right:auto}
+  .clb-tag{font-size:11.5px;letter-spacing:.2em}
+  .clb-pipeline .clb-step{font-size:14.5px}
+  .clb-pipeline .clb-step b{font-size:12px}
+}
+@media(max-width:680px){
+  /* hero: «Оживить сцену» стоит абсолютно у нижнего края — резервируем под неё
+     место, иначе кнопка ложилась прямо поверх цифр статистики */
+  .hero-in{padding-bottom:calc(clamp(16px,4.5svh,30px) + 60px)}
+  .hero-copy{margin-top:14px}
+  .hero-cta{margin-top:18px}
+  .hero-perks{margin-top:14px}
+  .hero .hero-stats{margin-top:18px}
+  .char-cta{font-size:11px;white-space:nowrap}
+  .hero-top .eyebrow{font-size:10px;letter-spacing:.2em}
+  .hero-cta .btn,.hero-secondary{font-size:10.5px}
+  .hero-cta svg{width:16px;height:16px}
+  .hero-perks span{font-size:12px;letter-spacing:.08em}
+  .hero .hero-stats .hero-stat-data>span{font-size:10px;letter-spacing:.1em}
+  /* на 320–360px три подписи в строку не влезали — «Финальный рендер» обрезался краем hero */
+  .hero .hero-stats{padding-inline:0;width:100%;align-items:flex-start}
+  .hero-stat{flex:1 1 0;min-width:0;padding-inline:4px}
+  .hero .hero-stats .hero-stat-data>span{white-space:normal;line-height:1.35}
+
+  .eyebrow{font-size:11px;letter-spacing:.24em}
+  .btn{font-size:11.5px}
+
+  /* карточки работ в 2 колонки: play-кнопка отнимала ширину у подписи и
+     вылезала за скругление — переносим её в верхний угол карточки */
+  .rail .card-meta{top:0;padding:12px;align-items:flex-end}
+  .rail .card-meta>div:first-child{min-width:0}
+  .rail .card .pl{position:absolute;top:10px;right:10px;width:38px;height:38px}
+  .card-meta h4{font-size:13.5px;overflow-wrap:anywhere}
+  .card-meta em{font-size:11px;letter-spacing:.08em;margin-top:5px;color:#B4B8C1}
+  .card::after{background:linear-gradient(180deg,rgba(8,8,10,0) 40%,rgba(8,8,10,.94) 100%)}
+  .card .pl svg{width:13px;height:13px}
+
+  /* услуги: номер над заголовком, а не отдельной пустой колонкой слева */
+  .srv-i{grid-template-columns:minmax(0,1fr);row-gap:10px;padding-inline:0}
+  .srv-i h3,.srv-i .srv-body{grid-column:1}
+  .srv-i p{font-size:14.5px}
+  .srv-i li{font-size:11.5px;letter-spacing:.06em}
+
+  .proc>div{min-height:0;gap:14px}
+  .proc h3{min-height:0}
+  .proc b{font-size:11.5px}
+  .proc p{font-size:14.5px}
+
+  .filters button{font-size:12px;letter-spacing:.12em}
+  .cr-num{font-size:11.5px}
+  .cr-tag{font-size:11.5px;letter-spacing:.08em}
+  .cr-arrow{width:32px;height:32px}
+  .cr-arrow svg{width:13px;height:13px}
+  .about-stats span{font-size:11.5px;letter-spacing:.1em}
+  .chips span{font-size:13px}
+  .tier .tag{font-size:11px}
+  .tier .price small{font-size:12.5px}
+  .price-note{font-size:14px}
+  .faq summary{font-size:14.5px;gap:16px}
+  .faq .ans{font-size:15px}
+  .soc-btn{font-size:12px}
+  .soc-btn svg{width:18px;height:18px}
+  .mail-link{font-size:16px}
+  footer{font-size:13px}
+  .vp-time{font-size:12px}
+  .vp-btn{width:38px;height:38px}
+  .vp-btn svg{width:20px;height:20px}
+}
+
 /* прячем системный курсор везде — рисуем свою стеклянную стрелку (правило последнее, чтобы перебить cursor:pointer) */
 @media (hover:hover) and (pointer:fine){
   html,body,body *{cursor:none!important}
