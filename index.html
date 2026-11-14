@@ -1062,7 +1062,7 @@ footer a:hover{color:var(--ink)}
       <a href="#price">Цены</a>
       <a href="#contact">Контакты</a>
     </nav>
-    <a href="https://t.me/vasty_3d" target="_blank" rel="noopener" class="btn btn-primary nav-cta magnet">Обсудить проект</a>
+    <a href="#vasty-pay" class="btn btn-primary nav-cta magnet" data-vasty-pay>Оплатить проект</a>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mob"><i></i></button>
   </div>
 </header>
@@ -1545,7 +1545,7 @@ footer a:hover{color:var(--ink)}
     <a href="https://www.instagram.com/vasty3d" target="_blank" rel="noopener">IG</a>
     <a href="mailto:vasty3d@gmail.com">MAIL</a>
   </div>
-</footer></div>
+<a href="offer.html">Публичная оферта</a></footer></div>
 <div class="foot-mark" aria-hidden="true">VASTY</div>
 
 </main>
@@ -3017,4 +3017,7 @@ addEventListener('scroll',()=>{
 </script>
 
 
+<style>#vasty-pay{color:var(--ink);background:#121217;border:1px solid #35313c;border-radius:26px;width:min(480px,calc(100% - 32px));padding:30px;max-height:90dvh;overflow:auto}#vasty-pay::backdrop{background:#000b;backdrop-filter:blur(8px)}#vasty-pay h2{font-size:clamp(20px,4vw,28px);line-height:1.2;margin:16px 0}#vasty-pay form{display:grid;gap:15px}#vasty-pay label{display:grid;gap:6px;font-weight:500}#vasty-pay input:not([type=checkbox]){width:100%;padding:14px;border:1px solid #45404d;border-radius:12px;background:#08080a;color:white;font:inherit}#vasty-pay .pay-consent{display:flex;align-items:flex-start;gap:10px;font-size:14px}#vasty-pay a{text-decoration:underline}#vasty-pay .pay-close{float:right;font-size:25px}#vasty-pay .btn{justify-content:center;width:100%}#vasty-pay p{font-size:14px;color:#b4b4bd}#vasty-pay button:disabled{opacity:.5;cursor:not-allowed}</style>
+<dialog id="vasty-pay" aria-labelledby="vasty-pay-title"><button type="button" class="pay-close" aria-label="Закрыть">×</button><div class="eyebrow">VASTY / PAYMENT</div><h2 id="vasty-pay-title">Оплатить проект</h2><p>Введите ранее согласованную стоимость услуг. Сумма в российских рублях.</p><form><label>Название или номер проекта<input name="project" required maxlength="120" placeholder="Например, CGI-ролик"></label><label>Сумма, ₽<input name="amount" type="number" min="1" step="0.01" required placeholder="25000" inputmode="decimal"></label><label class="pay-consent"><input name="consent" type="checkbox" required><span>Принимаю условия <a href="offer.html" target="_blank" rel="noopener">публичной оферты</a>.</span></label><button type="submit" class="btn btn-primary" disabled>Перейти к оплате</button><p role="status">Онлайн-оплата пока не подключена. <a href="https://t.me/vasty_3d" target="_blank" rel="noopener">Связаться для оплаты</a>.</p></form></dialog>
+<script>(()=>{const d=document.getElementById('vasty-pay');document.querySelectorAll('[data-vasty-pay]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();d.showModal()}));d.querySelector('.pay-close').addEventListener('click',()=>d.close());d.addEventListener('click',e=>{if(e.target===d){const b=d.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)d.close()}});d.querySelector('form').addEventListener('submit',e=>e.preventDefault())})();</script>
 </body></html>
